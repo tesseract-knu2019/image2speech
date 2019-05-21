@@ -1,7 +1,9 @@
 import Tesseract from 'tesseract.js';
 
 const { TesseractWorker } = Tesseract;
-const worker = new TesseractWorker();
+const worker = new TesseractWorker({
+  langPath: document.URL + 'tessdata/'
+});
 
 // Speech
 
