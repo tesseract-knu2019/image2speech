@@ -7,9 +7,11 @@ const worker = new TesseractWorker();
 
 var synth = window.speechSynthesis;
 
-var inputForm = document.querySelector('form');
 var inputTxt = document.querySelector('.txt');
 var voiceSelect = document.querySelector('.voice-select');
+
+var playButton = document.querySelector('#play');
+var stopButton = document.querySelector('#stop');
 
 var pitch = document.querySelector('#pitch');
 var pitchValue = document.querySelector('.pitch-value');
@@ -72,12 +74,15 @@ function speak(){
   }
 }
 
-inputForm.onsubmit = function(event) {
+playButton.onclick = function(event) {
   event.preventDefault();
-
   speak();
-
   inputTxt.blur();
+}
+
+stopButton.onclick = function(event) {
+  event.preventDefault();
+  synth.cancel();
 }
 
 pitch.onchange = function() {
@@ -87,11 +92,6 @@ pitch.onchange = function() {
 rate.onchange = function() {
   rateValue.textContent = rate.value;
 }
-
-voiceSelect.onchange = function(){
-  speak();
-}
-
 
 // Image
 
