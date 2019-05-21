@@ -21,12 +21,27 @@ var rateValue = document.querySelector('.rate-value');
 var voices = [];
 
 function populateVoiceList() {
-  voices = synth.getVoices().sort(function (a, b) {
+  voices = synth.getVoices();
+
+  var ENGKORVoices = voices.filter((v) => v.lang == "en-US" || v.lang == "ko-KR")
+  var nonENGKORVoices = voices.filter((v) => !(v.lang == "en-US" || v.lang == "ko-KR"))
+
+  ENGKORVoices.sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
       if ( aname < bname ) return -1;
       else if ( aname == bname ) return 0;
       else return +1;
   });
+
+  nonENGKORVoices.sort(function (a, b) {
+      const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
+      if ( aname < bname ) return -1;
+      else if ( aname == bname ) return 0;
+      else return +1;
+  });
+
+  voices = [...ENGKORVoices, ...nonENGKORVoices];
+
   var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
   voiceSelect.innerHTML = '';
   for(var i = 0; i < voices.length ; i++) {
