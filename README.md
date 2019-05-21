@@ -1,7 +1,13 @@
 # image2speech
 
 ## setup
-install nodejs and yarn
+1. install [nodejs](http://nodejs.org) and [yarn](https://yarnpkg.com)
+2. install parcel
+```
+yarn global add parcel-bundler
+```
+
+3. install packages
 ```
 yarn install
 ```
