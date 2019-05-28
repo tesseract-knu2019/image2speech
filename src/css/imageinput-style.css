@@ -1,0 +1,22 @@
+
+#holder {
+  position: relative;
+  border: 10px dashed #d0a7b3;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+#holder.hover {
+  border: 10px dashed #777;
+}
+
+.center {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #d0a7b3;  
+}
