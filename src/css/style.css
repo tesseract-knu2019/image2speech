@@ -86,7 +86,7 @@ body:before{
   vertical-align:middle;
 }
 button{
-  background: #d0a7b3;
+  background: #2964ca;
   color:#fff;
   border:none;
   position:relative;
@@ -99,7 +99,7 @@ button{
 }
 button:hover{
   background:#fff;
-  color: #d0a7b3;
+  color: #2964ca;
 }
 button:before,button:after{
   content:'';
@@ -108,7 +108,7 @@ button:before,button:after{
   right:0;
   height:2px;
   width:0;
-  background: #d0a7b3;
+  background: #2964ca;
   transition:400ms ease all;
 }
 button:after{
@@ -120,4 +120,8 @@ button:after{
 button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
+}
+
+.txt {
+  resize: vertical;
 }

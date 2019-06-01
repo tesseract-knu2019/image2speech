@@ -42,6 +42,10 @@
       <option value="jpn">Japanese</option>
     </select>
 
+    <select class="voice-select">
+      <option value="" disabled="disabled" selected="selected">Choose a voice-language </option>
+    </select>
+
     <div class="input-image-container">
       <image class="input-image"/>
       <div class="upload-options">
@@ -52,7 +56,7 @@
     <p class="progress-text"> </p>
 
     <form>
-    <input type="text" class="txt">
+    <textarea type="text" class="txt"></textarea>
     <div>
       <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
       <div class="rate-value">1</div>
@@ -63,10 +67,6 @@
       <div class="pitch-value">1</div>
       <div class="clearfix"></div>
     </div>
-
-    <select class="voice-select">
-    <option value="" disabled="disabled" selected="selected">Choose a voice-language </option>
-    </select>
 
     <div class="controls">
       <button id="play" type="submit"> &emsp; &emsp;Play&emsp; &emsp;</button>

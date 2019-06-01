@@ -129,6 +129,7 @@ document.onImageSelected = function(event) {
       })
       .then((result) => {
         progressText.innerHTML = "Done!"
+        console.log(result)
         inputTxt.value = result.text;
         speak();
       })
