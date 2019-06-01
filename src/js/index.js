@@ -2,7 +2,7 @@ import Tesseract from 'tesseract.js';
 
 const { TesseractWorker } = Tesseract;
 const worker = new TesseractWorker({
-  langPath: document.URL + 'tessdata/'
+  // langPath: document.URL + 'tessdata/'
 });
 
 // Speech
@@ -15,6 +15,7 @@ var voiceSelect = document.querySelector('.voice-select');
 var playButton = document.querySelector('#play');
 var stopButton = document.querySelector('#stop');
 
+var autoplay = document.querySelector('#autoplay');
 var pitch = document.querySelector('#pitch');
 var pitchValue = document.querySelector('.pitch-value');
 var rate = document.querySelector('#rate');
@@ -131,7 +132,7 @@ document.onImageSelected = function(event) {
         progressText.innerHTML = "Done!"
         console.log(result)
         inputTxt.value = result.text;
-        speak();
+        if(autoplay.checked) speak();
       })
   };
 
